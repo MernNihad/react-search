@@ -1,25 +1,31 @@
 // package
-import React from "react";
-import ReactDOM from "react-dom/client";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-// custom
+import ReactDOM from "react-dom/client";
+import App from "./components/App.jsx";
 import "./index.css";
-import "./Home.css";
-import App from "./search/App";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import App1 from "./App1.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
 import About from "./About";
-import Home from "./switchPages/Home";
-import Product from "./switchPages/Product";
+import Edit from "./Edit"
+import App1 from "./App1";
+import View from "./View"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  // <App/>
+
   <BrowserRouter>
     <Routes>
-      <Route path="/home" element={<Home/>}></Route>
-      <Route path="/about" element={<About/>}></Route>
-      <Route path="/" element={<App/>}></Route>
-      <Route path="/product" element={<Product/>}></Route>
+      <Route path="/home" element={<Home/>} />
+      <Route path="/" element={<App1/>} />
+      <Route path="/about" element={<About/>} />
+      <Route path="/edit" element={<Edit/>} />
+      <Route path="/view" element={<View/>} />
+      <Route path="/example" element={<View/>} />
     </Routes>
   </BrowserRouter>
+
+  // <App1/>
 );
